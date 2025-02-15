@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('cobertura')->nullable();
             $table->string('ciudad')->nullable();
             $table->string('departamento')->nullable();
-            $table->string('active')->nullable();
+            $table->integer('active')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
