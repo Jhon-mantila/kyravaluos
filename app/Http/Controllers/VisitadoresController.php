@@ -29,7 +29,9 @@ class VisitadoresController extends Controller
         }
 
         // Paginar los resultados
-        $visitadores = $query->paginate(10);
+        //$visitadores = $query->paginate(10);
+        // Paginar los resultados y conservar el parámetro de búsqueda
+        $visitadores = $query->paginate(10)->appends(['search' => $search]);
 
         // Retornar la vista de Inertia con los datos
         return Inertia::render('Visitadores/Index', [

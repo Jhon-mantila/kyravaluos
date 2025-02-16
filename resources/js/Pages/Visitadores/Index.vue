@@ -71,7 +71,9 @@
       filters: Object,
   });
   
-  const search = ref(props.filters.search || '');
+  //const search = ref(props.filters.search || '');
+  // Obtener el valor de búsqueda de la URL (si existe)
+  const search = ref(new URLSearchParams(window.location.search).get('search') || '');
   
   const onSearch = () => {
       router.get('/visitadores', { search: search.value }, {
