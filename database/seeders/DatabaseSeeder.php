@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Visitadores;
 use App\Models\Clientes;
+use App\Models\Avaluos;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,5 +24,7 @@ class DatabaseSeeder extends Seeder
 
         Visitadores::factory()->count(10)->create();
         Clientes::factory()->count(10)->create();
+        Avaluos::factory()->count(10)->create();
+    
     }
 }

@@ -6,25 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Clientes extends Model
+class Avaluos extends Model
 {
-    /** @use HasFactory<\Database\Factories\ClientesFactory> */
+    /** @use HasFactory<\Database\Factories\AvaluosFactory> */
     use HasFactory;
     use HasUuids; // para visualizar bien los id creados con uuid
 
     protected $fillable = [
         'id',
-        'nombre',
-        'logo',
-        'telefono',
-        'direccion',
-        'ciudad',
+        'estado',
+        'observaciones',
+        'cliente_id',
     ];
 
-    protected function avaluos(){
-        return $this->hasMany(Avaluos::class);
+    public function clientes(){
+        return $this->belongsTo(Clientes::class);
     }
-    
 
 
 }
