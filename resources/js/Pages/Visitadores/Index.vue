@@ -13,12 +13,15 @@
                 <div class="p-6 text-gray-900">
                         <div>
                             <!-- Barra de búsqueda -->
-                            <input
-                                type="text"
-                                v-model="search"
-                                placeholder="Buscar visitadores..."
-                                @input="onSearch"
-                            />
+                            <div class="mb-4 w-full">
+                                <input
+                                    type="text"
+                                    v-model="search"
+                                    placeholder="Buscar visitadores..."
+                                    @input="onSearch"
+                                    class="w-full p-2 border border-gray-300 rounded-md"
+                                />
+                            </div>
                             <!-- Tabla de visitadores -->
                             <table>
                                 <thead>

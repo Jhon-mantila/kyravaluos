@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('visitadores', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('cobertura')->nullable();
+            $table->string('nombre')->nullable();
+            $table->string('logo')->nullable();
             $table->string('telefono')->nullable();
+            $table->string('direccion')->nullable();
             $table->string('ciudad')->nullable();
-            $table->string('departamento')->nullable();
-            $table->integer('active')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('visitadores');
+        Schema::dropIfExists('clientes');
     }
 };

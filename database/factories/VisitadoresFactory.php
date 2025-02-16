@@ -21,6 +21,7 @@ class VisitadoresFactory extends Factory
             'id' =>  (string) Uuid::uuid4(),
             'cobertura' => $this->faker->word, // Genera una palabra aleatoria
             'ciudad' => $this->faker->city, // Genera una ciudad aleatoria
+            'telefono' => $this->faker->phoneNumber, // Genera un número de teléfono aleatorio
             'departamento' => $this->faker->state, // Genera un departamento/estado aleatorio
             'active' => $this->faker->boolean, // Genera un valor booleano (true o false)
             'user_id' => 1, //\App\Models\User::factory(), // Relación con el modelo User, pero si se crean 10 visitadores realaciona 10 usauruos y los crea
