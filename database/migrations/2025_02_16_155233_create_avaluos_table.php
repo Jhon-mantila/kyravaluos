@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('avaluos', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('numero_avaluo')->nullable();
             $table->string('estado')->nullable();
+            $table->string('tipo_avaluo')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('ciudad')->nullable();
+            $table->string('departamento')->nullable();
+            $table->integer('area')->nullable();
+            $table->integer('valor_comercial_estimado')->nullable();
             $table->text('observaciones')->nullable();
             $table->uuid('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('clientes');

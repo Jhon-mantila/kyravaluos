@@ -14,7 +14,14 @@ class Avaluos extends Model
 
     protected $fillable = [
         'id',
+        'numero_avaluo',
         'estado',
+        'tipo_avaluo',
+        'direccion',
+        'ciudad',
+        'departamento',
+        'area',
+        'valor_comercial_estimado',
         'observaciones',
         'cliente_id',
     ];
