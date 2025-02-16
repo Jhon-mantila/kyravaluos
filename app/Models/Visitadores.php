@@ -24,4 +24,8 @@ class Visitadores extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    protected function informacion_visita(){
+        return $this->hasMany(InformacionVisita::class);
+    }
 }

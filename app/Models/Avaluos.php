@@ -30,5 +30,8 @@ class Avaluos extends Model
         return $this->belongsTo(Clientes::class);
     }
 
+    protected function informacion_visita(){
+        return $this->hasMany(InformacionVisita::class);
+    }
 
 }
