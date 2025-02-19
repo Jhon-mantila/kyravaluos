@@ -36,4 +36,25 @@ class ClientesController extends Controller
             'filters' => $request->only(['search']),
         ]);
     }
+
+    public function edit($id)
+    {
+        $cliente = Clientes::findOrFail($id);
+        return Inertia::render('Clientes/Edit', [
+            'cliente' => $cliente,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $cliente = Clientes::findOrFail($id);
+        $cliente->update($request->validate([
+            'nombre' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'telefono' => 'required|string|max:255',
+            'ciudad' => 'required|string|max:255',
+        ]));
+
+        return redirect()->route('clientes.index')->with('success', 'Cliente actualizado correctamente.');
+    }
 }

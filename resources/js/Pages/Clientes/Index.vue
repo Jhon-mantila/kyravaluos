@@ -53,7 +53,7 @@
     </AuthenticatedLayout>
 </template>
 <script setup>
-  import { ref, watch } from 'vue';
+  import { ref, watch, onMounted } from 'vue';
   import { router } from '@inertiajs/vue3'; // Usa `router` en lugar de `Inertia`
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
   import { Head } from '@inertiajs/vue3';
@@ -63,6 +63,12 @@
       clientes: Object,
       filters: Object,
   });
+
+    // Imprimir la data de clientes en la consola
+    onMounted(() => {
+        console.log(props.clientes);
+    });
+
   
   //const search = ref(props.filters.search || '');
   // Obtener el valor de búsqueda de la URL (si existe)
