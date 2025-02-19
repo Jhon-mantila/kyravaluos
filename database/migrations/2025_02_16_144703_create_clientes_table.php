@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('nombre')->nullable();
             $table->string('logo')->nullable();
+            $table->string('email')->nullable();
             $table->string('telefono')->nullable();
             $table->string('direccion')->nullable();
             $table->string('ciudad')->nullable();

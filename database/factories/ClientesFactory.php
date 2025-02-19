@@ -33,6 +33,7 @@ class ClientesFactory extends Factory
             'nombre' => fake()->name(),
             //'logo' => fake()->imageUrl(200, 200, 'business'), // Imagen de 200x200 píxeles de la categoría "business"
             'logo' => !empty($files) ? Storage::url($files[array_rand($files)]) : null,
+            'email' => $this->faker->unique()->safeEmail, // Genera un correo electrónico aleatorio
             'telefono' => $this->faker->phoneNumber, // Genera un número de teléfono aleatorio
             'direccion' => $this->faker->address, // Genera una dirección aleatoria
             'ciudad' => $this->faker->city, // Genera una ciudad aleatoria
