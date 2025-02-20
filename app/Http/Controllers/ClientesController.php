@@ -53,6 +53,7 @@ class ClientesController extends Controller
             'email' => 'required|email|max:255',
             'telefono' => 'required|string|max:255',
             'ciudad' => 'required|string|max:255',
+            'updated_at' => date("Y-m-d H:i:s"),
         ]));
 
         return redirect()->route('clientes.index')->with('success', 'Cliente actualizado correctamente.');

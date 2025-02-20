@@ -30,6 +30,8 @@
                                     <th>Email</th>
                                     <th>Ciudad</th>
                                     <th>Activo</th>
+                                    <th class="px-4 py-2">Última modificación</th>
+                                    <th class="px-4 py-2">Fecha Creación</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
@@ -39,6 +41,8 @@
                                     <td>{{ visitador.user.email }}</td> <!-- Email del usuario -->
                                     <td>{{ visitador.ciudad }}</td> <!-- Ciudad del visitador -->
                                     <td>{{ visitador.active ? 'Sí' : 'No' }}</td> <!-- Estado activo -->
+                                    <td class="px-4 py-2">{{ formatDate(visitador.updated_at) }}</td>
+                                    <td class="px-4 py-2">{{ formatDate(visitador.created_at) }}</td>
                                     <td>
                                     <a :href="`/visitadores/${visitador.id}/edit`">Editar</a>
                                     <button @click="deleteVisitador(visitador.id)">Eliminar</button>
@@ -62,6 +66,7 @@
 <script setup>
   import { ref, watch } from 'vue';
   import { router } from '@inertiajs/vue3'; // Usa `router` en lugar de `Inertia`
+  import { formatDate } from '@/Utils/dateUtils'; // Importar la función desde el archivo de utilidades
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
   import { Head } from '@inertiajs/vue3';
   import Pagination from '@/Components/Pagination.vue';
@@ -85,6 +90,7 @@
   watch(search, (value) => {
       onSearch();
   });
+
 </script>
   
   <style scoped>

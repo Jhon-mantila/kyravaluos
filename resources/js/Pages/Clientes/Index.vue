@@ -28,6 +28,8 @@
                                 <th class="px-4 py-2">Nombre</th>
                                 <th class="px-4 py-2">Email</th>
                                 <th class="px-4 py-2">Teléfono</th>
+                                <th class="px-4 py-2">Última modificación</th>
+                                <th class="px-4 py-2">Fecha Creación</th>
                                 <th class="px-4 py-2">Acciones</th>
                                 </tr>
                             </thead>
@@ -36,6 +38,9 @@
                                 <td class="px-4 py-2">{{ cliente.nombre }}</td>
                                 <td class="px-4 py-2">{{ cliente.email }}</td>
                                 <td class="px-4 py-2">{{ cliente.telefono }}</td>
+                                <td class="px-4 py-2">{{ formatDate(cliente.updated_at) }}</td>
+                                <td class="px-4 py-2">{{ formatDate(cliente.created_at) }}</td>
+
                                 <td class="px-4 py-2">
                                     <a :href="route('clientes.edit', cliente.id)" class="text-blue-500 hover:text-blue-700">Editar</a>
                                 </td>
@@ -55,6 +60,7 @@
 <script setup>
   import { ref, watch, onMounted } from 'vue';
   import { router } from '@inertiajs/vue3'; // Usa `router` en lugar de `Inertia`
+  import { formatDate } from '@/Utils/dateUtils'; // Importar la función desde el archivo de utilidades
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
   import { Head } from '@inertiajs/vue3';
   import Pagination from '@/Components/Pagination.vue';
