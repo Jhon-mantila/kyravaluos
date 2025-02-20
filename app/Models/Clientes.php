@@ -22,7 +22,7 @@ class Clientes extends Model
         'ciudad',
     ];
 
-    protected function avaluos(){
+    protected function avaluo(){
         return $this->hasMany(Avaluos::class);
     }
     

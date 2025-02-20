@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\VisitadoresController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\AvaluosController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('visitadores', VisitadoresController::class)->middleware(['auth', 'verified']);
 Route::resource('clientes', ClientesController::class)->middleware(['auth', 'verified']);
+Route::resource('avaluos', AvaluosController::class)->middleware(['auth', 'verified']);
 
 
 require __DIR__.'/auth.php';
